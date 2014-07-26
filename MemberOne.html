@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link href="/stylesheets/website.css" rel="stylesheet" type="text/css" media="screen">	
+    <meta charset="utf-8"content="width=device-width, initial-scale=1.0">
+		<title>
+			...
+		</title>
+	</head>
+		<body>
+			
+				<center><div id = "avatar"><img class = "sites1" src= "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t1.0-9/1796593_807734315911223_1462450233_n.jpg" length= "150" width="150"></center>
+				</div>
+				
+				<p><center><strong><h2>Francis Kevin P. Estrada<h2></font></strong></center></p>
+				<hr width = "300px">
+				<p><center><i><strong>“Live as if you were to die tomorrow. Learn as if you were to live forever.”</strong></i></center></p>
+				<div class= "about">
+				<h2>About me: </h2>
+				<p><center>I am a 5th year Bachelor of Science Computer Engineering student in Polytechnic University of the Philippines. My hobbies are playing basketball and League of legends but most of the time I lookup random stuffs on the internet. I am a hardworking and reliable when it comes to projects and work.After graduating,I would like to take the path of being either a Network Engineer or a Database Administrator. 
+				</center></p>
+				</td>
+				</tr>
+				<h2>Contact Information:</h2>
+				<ul class ="contact">
+					<li>francis.estrada29@yahoo.com.ph</li>
+					<li>franciskevinestrada29@gmail.com</li>
+					<li>+639068875079</li>
+					<li>212-34-87</li>
+				</ul>
+				</tr>
+				</td>			
+				</table>
+				</div>
+				</center>
+				<center>
+				<ul class = "links">
+					<li class = "sites"><a href="https://www.facebook.com/fkestrada29"><img class = "sites1" src="http://www.vanderbilt.edu/recreationandwellnesscenter/wellness/wp-content/uploads/Cracked-Facebook-Logo.png" width="32" length= "32"></a></li>
+					<li class = "sites"><a href="http://www.codecademy.com/francisestrada"><img class = "sites1" src="http://www.educationalappstore.com/images/upload/9250-logo-9250-logo-mzl.bmszoffb.png" width="32" length= "32"></a></li>
+					<li class = "sites"><a href="https://github.com/francisestrada"><img class = "sites1" src="http://cdns2.freepik.com/free-photo/github-logo_318-10832.jpg" length = "32" width="32"></a></li>
+					<li class = "sites"><a href="http://www.linkedin.com/profile/view?id=328155782&trk=nav_responsive_tab_profile"><img class = "sites1" src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/glossy-black-icons-social-media-logos/099325-glossy-black-icon-social-media-logos-linkedin-logo-square2.png" width="32" length = "32"></a></li>
+					<li class = "sites"><a href ="https://twitter.com/FranzKev"><img class = "sites1" src = "http://savvybookwriters.files.wordpress.com/2014/04/twitter_logo.jpg?"width ="32" length = "32"></a></li>
+					</center>
+				</ul>
+				
+				<hr width = "400px">
+				<h1><center>Welcome</center></h1>
+				<hr width = "400px">
+				
+	<div class = "guestbook">
+	<center>
+	<form><strong>Guestbook name:</strong>
+	      <input value="{{ guestbook_name }}" name="guestbook_name">
+
+	      <input type="submit" value="switch">
+	      
+	      <br>
+	    </form>
+
+	<form action="/sign1?guestbook_name={{ guestbook_name }}" method="post">
+	      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+	      <div><input type="submit" value="Sign Guestbook">
+	       
+	       </div>
+	       <br>
+	       <hr>
+	       <a href="{{ url|safe }}"><img class = "login" src ="http://t2.gstatic.com/images?q=tbn:ANd9GcRtpITrWBP5_4nG5Iot8FBEo3hMA7QHcSyxz4aNuA8TOv8mOcOt6A" length = "100" width = "100"></a>
+	    </form>
+	 <hr length = "20px">{% for greeting in greetings %}
+	      {% if greeting.author %}
+	        </hr><b>{{ greeting.author.nickname() }}</b> wrote:
+	      {% else %}
+	       An <strong>anonymous</strong> person wrote:
+	      {% endif %}
+	      <blockquote>{{ greeting.content }}</blockquote>
+	    {% endfor %}
+
+		
+	    
+	    </center>
+	    </div>
+	    <center>
+	    <hr width = "600px">
+	    		
+	   
+	    </div>
+	    </center>
+		</body>
+</html>

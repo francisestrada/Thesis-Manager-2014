@@ -1,0 +1,59 @@
+.sites1{
+		margin-top: 30px;
+		border-style: solid;
+		border-radius: 50px;
+		border-image-width: 300px;
+		padding-left: 10px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		padding-right: 10px;
+
+
+}
+
+.login
+{
+		border-radius: 20px;
+		border-style: transparent;
+
+}
+.links
+{
+		list-style-type: none;
+		margin:0;
+		padding: 0;
+}
+.sites
+{
+		display: inline;
+}
+.about
+{
+		border-style: solid;
+		margin: auto;
+		margin-left: 400px;
+		margin-right: 400px;
+}
+.guestbook
+{
+		border-style: solid;
+		margin: auto;
+		margin-left: 300px;
+		margin-right: 300px;
+		border-radius: 60px;
+}
+.about{
+		border-style: solid;
+		margin: auto;
+		border-radius: 30px;
+		margin-right: 300px;
+		margin-left: 300px;
+}
+
+p{
+		font-family: comic;
+}
+body {
+	background-image: url('http://www.wavegeneration.ca/images/background/work_background_1.jpg');
+	display: block;
+}

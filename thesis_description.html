@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="/stylesheets/thesisdesc.css" rel="stylesheet" type="text/css" media="screen">	
+    <meta charset="utf-8"content="width=device-width, initial-scale=1.0">
+	<title> Thesis Description</title>
+</head>
+<body>
+	{% for thesis in thesis_all %}
+	{% if thesis.key.id()==id  %}
+    <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{thesis.title}}</h3>
+  </div>
+  <div class="panel-body">
+    {{thesis.description}}
+  </div>
+</div>
+</div>
+</div>
+
+<center>
+<a href = "/thesis/new"> <button type="button" class="btn btn-primary">Register New</button></a>
+<a href = "/thesis/list"><button type="button" class="btn btn-primary">Lists of Thesis</button></a>
+<a href = "/thesis/edit/{{thesis.key.id()}}"><button type="button" class="btn btn-primary">Edit</button>
+</center>
+{% endif %}
+{% endfor %}
+</body>
+</html>

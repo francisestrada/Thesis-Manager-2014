@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="/stylesheets/adviserdesc.css" rel="stylesheet" type="text/css" media="screen">	
+    <meta charset="utf-8"content="width=device-width, initial-scale=1.0">
+	<title> Thesis Description</title>
+</head>
+<body>
+	{% for adviser in adviser_all %}
+	{% if adviser.key.id()== id  %}
+    <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{adviser.title}} {{adviser.first_name}} {{adviser.last_name}}</h3>
+  </div>
+  <div class="panel-body">
+    {{adviser.phone_number}}<br>
+    {{adviser.department}}<br>
+    {{adviser.email}}
+  </div>
+</div>
+</div>
+</div>
+
+<center>
+<a href = "/adviser/new"> <button type="button" class="btn btn-primary">Register New</button></a>
+<a href = "/adviser/list"><button type="button" class="btn btn-primary">Lists of Adviser</button></a>
+<a href = "/adviser/edit/{{adviser.key.id()}}"><button type="button" class="btn btn-primary">Edit Adviser</button></a>
+</center>
+{% endif %}
+{% endfor %}
+
+</body>
+</html>

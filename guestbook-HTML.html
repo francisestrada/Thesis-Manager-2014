@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/stylesheets/main.css">
+</head>
+  <body>
+  <div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand">Team-19</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/module-1/1">Member 1</a></li>
+      <li class="divider"></li>
+      <li class="active"><a href="/module-1/2">Member 2</a></li>
+      <li class="divider"></li>
+      <li class="active"><a href="/thesis/new">Thesis</a></li>
+      <li class="divider"></li>
+      <li class="active"><a href="/student/new">Students</a></li>
+      <li class="divider"></li>
+      <li class="active"><a href="/adviser/new">Advisers</a></li>
+      <li class="divider"></li>
+      </li> 
+    </ul>
+    <form class="navbar-form navbar-right">
+
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url|safe }}" class="active">Login</button></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id = "msgbox">
+    {% for greeting in greetings %}
+      {% if greeting.author %}
+        <b>{{ greeting.author.nickname() }}</b> wrote:
+      {% else %}
+       An anonymous person wrote:
+      {% endif %}
+      <blockquote>{{ greeting.content }}</blockquote>
+    {% endfor %}
+
+    <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" class = "btn btn-primary btn-sm" value = "Sign Guestbook"></div>
+    </form>
+    <br>
+      <br>
+        <form>Guestbook name:
+            <input type="submit" value="switch" class = "active">
+    <input value="{{ guestbook_name }}"  name="guestbook_name">
+
+      
+    </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/boostrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+{% endautoescape %}

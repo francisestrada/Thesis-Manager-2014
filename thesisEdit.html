@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/thesisnew.css">
+    <meta charset="utf-8"content="width=device-width, initial-scale=1.0">
+	<title>EDIT THESIS</title>
+
+</head>
+<body>
+  {% for thesis in thesis_all %}
+  {% if thesis.key.id()== id  %}
+<center>
+	<h1 id = "nav">Edit Thesis</h1></center>
+	<br>
+
+	<form class="form-horizontal" method = "POST" action = "/thesis/edit/{{thesis.key.id()}}">
+  	<fieldset>
+  	<div id = "comp">
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Title</label>
+      <div class="col-lg-10">
+        <input value = "{{thesis.title}}" type="text" class="form-control" name="title" placeholder = "Title.." required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Author</label>
+      <div class="col-lg-10">
+        <input value="{{thesis.author}}" type="text" class="form-control" name = "author" placeholder = "Author.." required>
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Description</label>
+      <div class="col-lg-10">
+        <textarea value ="{{thesis.description}}"class="form-control" rows="3" name = "description" id="textArea" placeholder = "{{thesis.description}}" required></textarea>
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Status</label>
+      <div class="col-lg-10">
+        <select value = "{{thesis.status}}"class="form-control" id="select" name="status">
+          <option>Approved</option>
+          <option>Rejected</option>
+          <option>Pending</option>
+        </select>
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Year</label>
+      <div class="col-lg-10">
+        <select value= "{{thesis.year}}" class="form-control" id="select" name="year">
+          <option>2001</option>
+          <option>2002</option>
+          <option>2003</option>
+          <option>2004</option>
+          <option>2005</option>
+          <option>2006</option>
+          <option>2007</option>
+          <option>2008</option>
+          <option>2009</option>
+          <option>2010</option>
+          <option>2011</option>
+          <option>2012</option>
+          <option>2013</option>
+          <option>2014</option>
+        </select>
+      </div>
+      </div>
+    </div>
+    </div>
+    <br>
+   <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button class="btn btn-default" type = "reset">Reset</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href = "/thesis/list"><button type = "button" class="btn btn-primary">Lists</button></a>
+      </div>
+    </div>
+  </fieldset>
+</form>
+ {% endif %}
+ {% endfor %}
+
+</body>
+</html>

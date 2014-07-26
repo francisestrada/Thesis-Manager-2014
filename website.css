@@ -1,0 +1,13 @@
+body{
+		border-style: double;
+		background-color: black;
+}
+h1 {
+		color: white;
+}
+ul {
+		list-style-type: none;
+		display: inherit;
+		margin: 500;
+		padding: 500;
+}

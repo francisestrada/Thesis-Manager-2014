@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All about Zee</title>
+</head>
+<body>
+<center><div id = "avatar"><img src=  length= "150" width="150"></center>
+	<p><center><STRONG><h2><font stlye = "Calibri"> Paul Zedric S. Arcilla </font></h2></STRONG></center></p>
+	<p><i><center>"Each choice you make creates a new world and brings forth new future. But at the same time,<br> you're eliminating a different future with the choices you didn't make."</center></i></p>
+	<p><center><strong><h2><font style="Calibri">Email Address</h2></strong></center></p>
+	<p><center>zedricarcilla@yahoo.com</center></p>
+	<p><center><strong><h2><font style="Calibri">Contact Number</h2></strong></center></p>
+	<p><center>09357452396</center></p>
+	<div>
+		<table border="4" width="500" align="center">
+		<tr>
+		<td>
+		<h2><center> <STRONG> "Information about me."</STRONG></center></h2>
+
+		<p><center>Hi! welcome to my page and i would like to share to you some information about me. I am a fifth year student of Polytechnic University of the Philippines Sta. Mesa Manila, currently taking up Bachelor of Science in Computer Engineering. I am a very cheerful person and i love talking but sometimes things always go the usual way. Sometimes I am silent and thinks too much. When I'm at my thinking stage i thing so deep and my head always ache every after that stage. I love to think.</center></p>
+		<p><center>I play bass at church and I'm part of the music team and sometimes plays the guitar of sing. My favorite sports is badminton. My most favorite thing about my course is the electronic part of the course.</center></p>
+		</td>
+		</tr>
+		</table>
+	</div>
+
+<center>
+ {% for greeting in greetings %}
+      {% if greeting.author %}
+        <b>{{ greeting.author.nickname() }}</b> wrote:
+      {% else %}
+       An anonymous person wrote:
+      {% endif %}
+      <blockquote>{{ greeting.content }}</blockquote>
+    {% endfor %}
+
+    <form action="/sign2?guestbook_name={{ guestbook_name }}" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Sign Guestbook"></div>
+    </form>
+
+    <hr>
+    <div id = "submit">
+    <form>Guestbook name:
+      <input value="{{ guestbook_name }}" name="guestbook_name">
+      <input type="submit" value="switch">
+    </form>
+
+    <a href="{{ url|safe }}">{{ url_linktext }}</a>
+    </div>
+    </center>
+</body>
+</html>

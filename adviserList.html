@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="/stylesheets/adviserlist.css" rel="stylesheet" type="text/css" media="screen">	
+    <meta charset="utf-8"content="width=device-width, initial-scale=1.0">
+	<title>Adviser List</title>
+
+</head>
+<body>
+	<center>
+	<h1>Adviser List</h1>
+	</center>
+		<br>
+		<br>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+  		<th>Title</th>
+      	<th>First Name</th>
+      	<th>Last Name</th>
+        <th>Department</th>
+    </tr>
+  </thead>
+    {% for adviser in adviser_all %}
+  <tbody>
+    <tr>
+      <td>{{adviser.title}}</td>
+      <td>{{adviser.first_name}}</td>
+      <td>{{adviser.last_name}} </td>
+      <td>{{adviser.department}}</td>
+
+      <td><a href="/adviser/view/{{adviser.key.id()}}" style="text-decoration:none">View</a></td>
+    </tr>
+        {% endfor %}
+
+  </tbody>
+</table>
+<center>
+<a href = "/adviser/new"> <button type="button" class="btn btn-primary">Register New</button></a>
+</center>
+</body>
+</html>
